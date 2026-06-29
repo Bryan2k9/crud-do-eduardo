@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Caso esteja em uma subpasta, altere para:
+    # RewriteBase /nome-da-pasta/
+    RewriteBase /
+
+    # Se o arquivo ou diretório existir, não redireciona
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Todas as demais requisições passam pelo Front Controller
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
