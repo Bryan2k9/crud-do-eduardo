@@ -1,11 +1,11 @@
 <?php
 
-require_once __DIR__ . "/../config/database.php";
+require_once __DIR__ . "/../config/database.php"; // conectando a database.
 
-require_once __DIR__ . "/../app/models/Pessoa.php";
-require_once __DIR__ . "/../app/repository/PessoaRepository.php";
-require_once __DIR__ . "/../app/service/PessoaService.php";
-require_once __DIR__ . "/../app/controllers/PessoaController.php";
+require_once __DIR__ . "/../app/models/Pessoa.php"; // conectando a pessoa
+require_once __DIR__ . "/../app/repository/PessoaRepository.php"; // conectando ao repositório
+require_once __DIR__ . "/../app/service/PessoaService.php"; // conectando aos services
+require_once __DIR__ . "/../app/controllers/PessoaController.php"; // conectando ao controller
 
 //idiciação
 $pessoaRepository = new PessoaRepository($pdo); //repositório pede o banco de dados
