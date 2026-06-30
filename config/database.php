@@ -18,7 +18,7 @@ try {
     // $e->getCode();    // Código do erro
     // $e->getFile();    // Arquivo onde ocorreu
     // $e->getLine();    // Linha do erro 
-    console_log($e->getMessage()); // O dev pode consultar o erro no log e o user não.
+    error_log($e->getMessage()); // O dev pode consultar o erro no log e o user não.
     
     http_response_code(500); // Erro 500 (Internal Server Error). 
     exit(json_encode([
