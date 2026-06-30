@@ -17,8 +17,7 @@ class PessoaRepository
         return $stmt->execute([$nome]); # botando o parametro dentro do execute, padrão do modelo PDO, é o VALUES (nome).
     }
     
-    // repare que usou a classe Pessoa como parametro que contem as informações junto do ID, e para ignorar faltas de dados possiveis setou null.
-    public function findPessoaById(int $id): Pessoa | null 
+    public function findPessoaById(int $id): array | null // mudei para array porque Pessoa não é array e o PDO::FETCH_ASSOC retorna em array.
     {
         $sql = "SELECT * FROM pessoas WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
