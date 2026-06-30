@@ -15,6 +15,12 @@ class PessoaService
         if (strlen($nome) <= 100) // strlen conta os caracteres e tem que ser menor igual a 100.
             return true; // sai do if com o return true e ignora o false(se o bool for true).
         return false; // se o return acima falhar vai executar isso.
+        // está valição falta alguns outros tipos importantes como
+        # trim() - falta
+        # empty() - falta
+        # strlen() - já tem
+        # preg_match() - falta
+        // todos são importantes, ruim é quando tem que válidar essa merda com vários tipo, Nome, Email, Senha, Idade ETC. # USAR O FOREACH SENHORZINHO BRYAN.
     }
 
     public function criarPessoa(Pessoa $pessoa) // cria um objeto Pessoa = $pessoa
